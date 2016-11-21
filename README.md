@@ -36,10 +36,10 @@ MRIs of primary GBM tumors were collected from 92 patients archived by the [The 
 We segmented the TCIA MRI images using a computer-assisted segmentation program to extract tumor lesions from the surrounding brain tissue, which first converts MRI images to a grayscale, and then thresholds to generate binary images. Morphological segmentation is then applied to delineate connected components. More specifically, the program selects contours corresponding to enhanced tumor lesions, which are lighter than healthy brain tissue. As previously noted, necrosis presents as dark regions nested within the indicated lesion. Examples of the raw image obtained from TCIA, and the final segmented result, is given in [Crawford et al. (2016)](http://arxiv.org/) under Figure 7(a) and Figure 7(b), respectively. All segmented TCIA images used in our study can be found in a zipped file in the Data folder.
 
 ### Tutorial for Running SECT
-The tutorial for computing the SECT topological summaries of the 92 segmented TCIA MRIs is provided here in the MATLAB code folder.
+The tutorial for computing the SECT topological summaries of the 92 segmented TCIA MRIs is provided here in the MATLAB code folder. Note that the current version of the code only takes .png image files. 
 
 ### Tutorial for Running Bayesian LMMs
-
+The tutorial for running a predictive analysis, similar to the one presented in [Crawford et al. (2016)](http://arxiv.org/), can be found in the R Code folder. This code looks at a subset of the 92 TCGA patients, and corresponds to those included in the "diggitdata" Bioconductor R package. This script serves as a simple proof of concept. In order to obtain the mRNA gene expression measurements for all 92 patients, please visit [cBioPortal](http://www.cbioportal.org) or [the Genomic Data Commons Data Portal](https://gdc-portal.nci.nih.gov).
 
 ### Questions and Feedback
 For questions or concerns with the SECT functions, please contact
