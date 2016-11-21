@@ -107,10 +107,10 @@ for(j in 1:ncol(Y)){
   M = scale(Morph[!is.na(Y[,j]),],scale = FALSE)
   y = scale(Y[!is.na(Y[,j]),j])
   
-  KX = GetLinearKernel(t(X))
-  KE = GetLinearKernel(t(E))
-  KV = GetLinearKernel(t(V))
-  KM = GetLinearKernel(t(M))
+  KX = tcrossprod(X)/ncol(X)
+  KE = tcrossprod(E)/ncol(E)
+  KV = tcrossprod(V)/ncol(V)
+  KM = tcrossprod(M)/ncol(M)
   
   ### Set up a list to save results ###
   Results = foreach(i = 1:ndatasets)%dopar%{
