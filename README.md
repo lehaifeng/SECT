@@ -19,11 +19,7 @@ The SECT tutorial requires the installation of the following R libraries:
 
 [doParallel](https://cran.r-project.org/web/packages/doParallel/index.html)
 
-[Rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html)
-
-[RcppArmadillo](https://cran.r-project.org/web/packages/RcppArmadillo/index.html)
-
-[MASS](https://cran.r-project.org/web/packages/MASS/index.html)
+[R.matlab](https://cran.r-project.org/web/packages/R.matlab/index.html)
 
 [BGLR](https://cran.r-project.org/web/packages/BGLR/index.html)
 
