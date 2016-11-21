@@ -13,7 +13,7 @@ R is a widely used, free, and open source software environment for statistical c
 CRAN provides precompiled binary versions of R for Windows, MacOS, and select Linux distributions that are likely sufficient for many users' needs.  Users can also install R from source code;  however, this may require a significant amount of effort.  For specific details on how to compile, install, and manage R and R-packages, refer to the manual [R Installation and Administration](http://cran.r-project.org/doc/manuals/r-release/R-admin.html).
 
 ### R Packages Required for SECT and the Bayesian LMMs
-The SECT tutorial requires the installation of the following R libraries:
+The statistical implementation of the SECT topological summaries using Bayesian LMMs requires the installation of the following R libraries:
 
 [doParallel](https://cran.r-project.org/web/packages/doParallel/index.html)
 
@@ -30,13 +30,16 @@ The easiest method to install these packages is with the following example comma
 Alternatively, one can also [install R packages from the command line]
                              (http://cran.r-project.org/doc/manuals/r-release/R-admin.html#Installing-packages).
 
-### Segmented TCIA Magnetic Resonance Images
+### Segmented TCIA Magnetic Resonance Images (MRIs)
 MRIs of primary GBM tumors were collected from 92 patients archived by the [The Cancer Imaging Archive (TCIA)] (https://wiki.cancerimagingarchive.net/display/Public/TCGA-GBM), which is a publicly accessible data repository of medical images of cancer patients with matched data in The Cancer Genome Atlas (TCGA) — a collection of a variety of genomic and clinical data for 33 types of cancer. The 92 patients were selected based on two sets of criteria, namely, that they had post-contrast T1 axial MRIs taken at the time of their diagnosis, and that they had available matching (mRNA) gene expression data and clinical correlates on [cBioPortal](http://www.cbioportal.org).
 
-We segmented the TCIA MRI images using a computer-assisted segmentation program to extract tumor lesions from the surrounding brain tissue, which first converts MRI images to a grayscale, and then thresholds to generate binary images. Morphological segmentation is then applied to delineate connected components. More specifically, the program selects contours corresponding to enhanced tumor lesions, which are lighter than healthy brain tissue. As previously noted, necrosis presents as dark regions nested within the indicated lesion. Examples of the raw image obtained from TCIA, and the final segmented result, is given in [Crawford et al. (2016)](http://arxiv.org/) under Figure 7(a) and Figure 7(b), respectively. All segmented TCIA images used in our study can be found in the Data folder.
+We segmented the TCIA MRI images using a computer-assisted segmentation program to extract tumor lesions from the surrounding brain tissue, which first converts MRI images to a grayscale, and then thresholds to generate binary images. Morphological segmentation is then applied to delineate connected components. More specifically, the program selects contours corresponding to enhanced tumor lesions, which are lighter than healthy brain tissue. As previously noted, necrosis presents as dark regions nested within the indicated lesion. Examples of the raw image obtained from TCIA, and the final segmented result, is given in [Crawford et al. (2016)](http://arxiv.org/) under Figure 7(a) and Figure 7(b), respectively. All segmented TCIA images used in our study can be found in a zipped file in the Data folder.
 
 ### Tutorial for Running SECT
-The tutorials provided here is based on 
+The tutorial for computing the SECT topological summaries of the 92 segmented TCIA MRIs is provided here in the MATLAB code folder.
+
+### Tutorial for Running Bayesian LMMs
+
 
 ### Questions and Feedback
 For questions or concerns with the SECT functions, please contact
