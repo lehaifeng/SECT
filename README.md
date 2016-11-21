@@ -25,7 +25,7 @@ The SECT tutorial requires the installation of the following R libraries:
 
 The easiest method to install these packages is with the following example command entered in an R shell:
 
-install.packages("BGLR", dependecies = TRUE)
+    install.packages("BGLR", dependecies = TRUE)
 
 Alternatively, one can also [install R packages from the command line]
                              (http://cran.r-project.org/doc/manuals/r-release/R-admin.html#Installing-packages).
