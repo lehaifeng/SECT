@@ -39,7 +39,7 @@ We segmented the TCIA MRI images using a computer-assisted segmentation program 
 The tutorial for computing the SECT topological summaries of the 92 segmented TCIA MRIs is provided here in the MATLAB code folder. Note that the current version of the code only takes .png image files. 
 
 ### Tutorial for Running Bayesian LMMs
-The tutorial for running a predictive analysis, similar to the one presented in [Crawford et al. (2016)](http://arxiv.org/), can be found in the R Code folder. This code looks at a subset of the 92 TCGA patients, and corresponds to those included in the "diggitdata" Bioconductor R package. This script serves as a simple proof of concept. In order to obtain the mRNA gene expression measurements for all 92 patients, please visit [cBioPortal](http://www.cbioportal.org) or [the Genomic Data Commons Data Portal](https://gdc-portal.nci.nih.gov).
+The tutorial for running a predictive analysis, similar to the one presented in [Crawford et al. (2016)](http://arxiv.org/), can be found in the R Code folder. This code looks at a subset of the 92 TCGA patients, and corresponds to those included in the "diggitdata" Bioconductor R package. This script serves as a simple proof of concept. In order to obtain the mRNA gene expression measurements for all 92 patients, please visit [cBioPortal](http://www.cbioportal.org) or [The Genomic Data Commons Data Portal](https://gdc-portal.nci.nih.gov).
 
 ### Questions and Feedback
 For questions or concerns with the SECT functions, please contact
