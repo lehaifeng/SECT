@@ -52,6 +52,9 @@ We segmented the TCIA MRIs using the [Medical Imaging Interaction Toolkit with a
 ### Running SECT and Bayesian Functional RKHS Regression
 The tutorial for running a predictive analysis, similar to the one presented in [Crawford et al. (2017)](https://arxiv.org/abs/1611.06818), can be found in the Analysis directory. Note that the current version of the SECT code takes images/shapes that are formatted as png files. This code looks at a subset of the TCGA patients, and corresponds to those included in the "diggitdata" Bioconductor R package. This script serves as a means of reproducibility of the results presented in the manuscript.
 
+### Relevant Citations
+L. Crawford, A. Monod, A.X. Chen, S. Mukherjee, and R. Rabadán (2017). Functional Data Analysis using a Topological Summary Statistic: the Smooth Euler Characteristic Transform. arXiv. 1611.06818.
+
 ### Questions and Feedback
 For questions or concerns with the SECT functions, please contact [Lorin Crawford](mailto:lorin_crawford@brown.edu) or [Anthea Monod](mailto:rr2579@cumc.columbia.edu).
 
