@@ -56,6 +56,6 @@ The tutorial for running a predictive analysis, similar to the one presented in 
 L. Crawford, A. Monod, A.X. Chen, S. Mukherjee, and R. Rabadán (2017). Functional Data Analysis using a Topological Summary Statistic: the Smooth Euler Characteristic Transform. arXiv. 1611.06818.
 
 ### Questions and Feedback
-For questions or concerns with the SECT functions, please contact [Lorin Crawford](mailto:lorin_crawford@brown.edu) or [Anthea Monod](mailto:rr2579@cumc.columbia.edu).
+For questions or concerns with the SECT functions, please contact [Lorin Crawford](mailto:lorin_crawford@brown.edu) or [Anthea Monod](mailto:am4691@cumc.columbia.edu).
 
 We appreciate any feedback you may have with our repository and instructions.
