@@ -1,6 +1,8 @@
-#'dir.in' is the directory containing images/shapes (e.g. patient MRIs). The way the code is written, the images that are to be analyzed should be directly in this directory --- and not in some subfolder. (Future work: Allow the user to include patterns to subfolders).
+#'dir.in' is the directory containing images/shapes (e.g. patient MRIs).
 
-#'file.out' is where the final list of Euler Characteristic (EC) matrices should be saved. Note that the user is not specifying a directory, but the file name directly.
+#'out.file' specifies where the final list of Euler Characteristic (EC) matrices should be saved. Note that the user is not specifying a directory, but the file name directly.
+
+#'img.dir' determines the subfolders where the images are loacated. This can be a pattern.
 
 #'stepsize' is the number of sublevel sets to be taken during the filtration of each image.
 
@@ -18,7 +20,7 @@ ecf <- function(in.dir,out.file,img.dir=NULL,stepsize=100,rotstep=72,first.only=
 #Output #2: Shapes is the resulting structual array where:
 #.Name = Name of the shape and the slice number (e.g. apple_1)
 #.EC = A matrix of EC curves for that shape and slice number (#columns = #rotations)
-# R version, converted from /Summer_2017/Old_code/EC3D.m
+# R version, converted from EC3D.m
 
 # Load packages
 usePackage("png")
@@ -32,7 +34,6 @@ usePackage("lattice")
 #source("Code/ECFunctions_mao/mao_ECscale.R")
 #source("Code/ECFunctions_mao/mao_ECTmany.R")
 #source("Code/ECFunctions_mao/mao_ECTone.R")
-
 
 # Get the current working directory, useful for resetting
 startdir <- getwd()
@@ -48,7 +49,6 @@ startdir <- getwd()
 #out.dir = paste(startdir,"/Output",sep="")
 #if ( file.exists(out.dir) != TRUE ) dir.create(out.dir)
 
-
 # Set working directory to Image folder, get a vector containing all
 # patient identifiers
 
@@ -57,13 +57,11 @@ TCGA_patients = dir()
 n.patients <- length(TCGA_patients)
 setwd("../")
 
-
 # Set up desired number of rotations
 #rotstep = 72
 theta = seq(from= -pi,to=pi,by=2*pi/rotstep)
 d1 = cos(theta);d2=sin(theta)
 d= rbind(d1,d2)
-
 
 MRI_list <- list(NULL)
     for ( k in 1:n.patients) {
