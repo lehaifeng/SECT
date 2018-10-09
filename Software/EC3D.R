@@ -1,12 +1,14 @@
-#'dir.in' is the directory containing patient directories. The way the code is written right now the images should be directly in the patient directories and not in some subfolder like 'Segmentations'. If there is a pattern to the subfolders I can change it so that you can input that pattern as well.
+#'dir.in' is the directory containing images/shapes (e.g. patient MRIs). The way the code is written, the images that are to be analyzed should be directly in this directory --- and not in some subfolder. (Future work: Allow the user to include patterns to subfolders).
 
-#'file.out' is where the final list of EC matrices should be saved. Note that you're not specifying a directory but the file name directly.
+#'file.out' is where the final list of Euler Characteristic (EC) matrices should be saved. Note that the user is not specifying a directory, but the file name directly.
 
-#'stepsize' and 'rotstep'  are selfexplanatory, I set the values you had in the matlab script as the default
+#'stepsize' is the number of sublevel sets to be taken during the filtration of each image.
 
-#'first.only' stands for matlab like, and refers to the issue of multiple unconnected regions that we talked about. If it's true, it will behave like the matlab code and only touch the 'first' one
+#'rotstep' is the number of directions to be taken.
 
-#'verbose' is for whether you want to print out the individual image file names. Otherwise the code will print the index of the patient and the patient identifier.
+#'first.only' refers to the issue of multiple unconnected shapes or regions in the image (e.g. multifocal tumors with mutliple masses). If TRUE, the function will only compute the EC for the 'first' identified shape.
+
+#'verbose' is a boolean variable that prints out the individual image file names. If FALSE, the code will print the index of the patient and the patient identifier.
 
 ecf <- function(in.dir,out.file,img.dir=NULL,stepsize=100,rotstep=72,first.only=TRUE,verbose=FALSE){
 
@@ -164,12 +166,6 @@ MRI_list <- list(NULL)
     
 }
 
-
-
-
-
-
-
 boundary.trace <- function(bw,start){
 
     current.position <- start
@@ -184,7 +180,6 @@ boundary.trace <- function(bw,start){
     return(pos.list)
 }
 
-
 # This will include diagonal movement
 # direction of movement is ordered as
 # 1 - right
@@ -195,7 +190,6 @@ boundary.trace <- function(bw,start){
 # 6 - upleft
 # 7 - up
 # 8 - upright
-
 
 boundary.move <- function(bw,pos,direction){
 
@@ -294,8 +288,6 @@ connected.components <- function(BW){
     return(lab.mat)
 }
 
-
-
 #Input: complex: is a structure of finite dimensional simplicial complex (here is for 3 dim).
 #       complex.V is n1x3 vertices
 #       complex.E is n2x2 edges
@@ -306,14 +298,12 @@ connected.components <- function(BW){
 #       vector. (e.g. 100);
 #Output: stepsize <- by <- 2 matrix. Euler Characteristics (second column) for scales of function values (first).
 
-
 gEuler <- function(complex,fun,stepsize){
 
     # The thresholding rounding is in there to make sure this produces
     # the exact same results as the matlab code, which rounds to 4 
     # decimal places
-
-
+    
     V = complex$V
     E = complex$E
     F = complex$F
@@ -354,5 +344,3 @@ usePackage <- function(p) {
     install.packages(p, dep = TRUE)
   require(p, character.only = TRUE)
 }
-
-
